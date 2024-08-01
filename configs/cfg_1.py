@@ -16,7 +16,8 @@ cfg.debug = True
 #paths
 cfg.name = os.path.basename(__file__).split(".")[0]
 cfg.output_dir = f"datamount/weights/{os.path.basename(__file__).split('.')[0]}"
-cfg.data_folder = f"datamount/train_landmarks_npy/"
+# disable this line
+# cfg.data_folder = f"datamount/train_landmarks_npy/"
 cfg.train_df = f'datamount/train_folded.csv'
 cfg.symmetry_fp = 'datamount/symmetry.csv'
 
