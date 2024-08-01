@@ -71,11 +71,11 @@ batch_to_device = importlib.import_module(cfg.dataset).batch_to_device
 # Start neptune
 fns = [parser_args.config] + [getattr(cfg, s) for s in 'dataset model metric post_process_pipeline'.split()]
 fns = sum([glob.glob(f"{BASEDIR }/*/{fn}.py") for fn in  fns], [])
-
+# đổi api 
 if cfg.neptune_project == "common/quickstarts":
     neptune_api_token=neptune.ANONYMOUS_API_TOKEN
 else:
-    neptune_api_token=os.environ['NEPTUNE_API_TOKEN']
+    neptune_api_token=os.environ['eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiJmYjExYTdhZS1kZGQ2LTRkMDYtYjQyYS1kN2I2ZTc0YmE0NzkifQ==']
     
 neptune_run = neptune.init_run(
         project=cfg.neptune_project,
